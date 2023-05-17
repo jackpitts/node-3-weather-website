@@ -5,10 +5,7 @@ body {
     max-width: 650px;
     margin: 0 auto;
     padding: 0 16px;
-    background-image: url("/img/Immagine\ WhatsApp\ 2023-05-17\ ore\ 17.16.03.jpg");
-    background-repeat: no-repeat;
-    background-position: center; /* Center the image */
-    background-size: 1000px 1000px;
+
     display: flex;
     flex-direction: column;
     min-height: 100vh;
