@@ -9,17 +9,13 @@ const forecast = (latitude, longitude, callback) => {
             callback("Indirizzo non trovato. Provare di nuovo", undefined)
         } else {
             callback(
-                undefined,
-                body.current.weather_descriptions[0] +
-                ". It is currently " +
-                body.current.temperature +
-                " degrees. There is " +
-                body.current.precip +
-                "% chance of rain. Humidity is at " +
-                body.current.humidity +
-                "%. Wind speed is at " +
-                body.current.wind_speed +
-                "km/h."
+                undefined, {
+                    description: body.current.weather_descriptions[0],
+                    temperature: body.current.temperature,
+                    precip: body.current.precip,
+                    humidity: body.current.humidity,
+                    wind_speed: body.current.wind_speed
+                }
             );
         }
     })
