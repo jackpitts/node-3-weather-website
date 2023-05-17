@@ -8,9 +8,20 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback("Indirizzo non trovato. Provare di nuovo", undefined)
         } else {
-            callback(undefined, body.current.weather_descriptions[0] + ". It's currently " + body.current.temperature + " deegrees out and it feels like " + body.current.feelslike + " deegrees")
+            callback(
+                undefined,
+                body.current.weather_descriptions[0] +
+                ". It is currently " +
+                body.current.temperature +
+                " degrees. There is " +
+                body.current.precip +
+                "% chance of rain. Humidity is at " +
+                body.current.humidity +
+                "%. Wind speed is at " +
+                body.current.wind_speed +
+                "km/h."
+            );
         }
     })
 }
-
 module.exports = forecast
